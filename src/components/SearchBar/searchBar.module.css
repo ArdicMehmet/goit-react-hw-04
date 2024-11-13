@@ -1,0 +1,43 @@
+.container{
+    width: 100%;
+    background-color: #3746A6;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer{
+    width: 100%;
+    max-width: 400px;
+    height: 32px;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.inputText{
+    width: 100%;
+    font-size: 20px;
+    line-height: 32px;
+    padding-right: 36px;
+    padding-left: 10px;
+    border: none;
+}
+.inputText:focus{
+    outline: none;
+}
+.submitBtn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submitBtn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
