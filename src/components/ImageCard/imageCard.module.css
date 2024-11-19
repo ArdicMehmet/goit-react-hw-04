@@ -1,0 +1,14 @@
+.container{
+    width: 350px;
+    max-width: 350px;
+    height: 350px;
+    max-height: 350px;
+}
+.container:hover{
+    cursor: pointer;
+}
+.cardImage{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

@@ -4,19 +4,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import * as Yup from "yup";
 import styles from "./searchBar.module.css";
-const SearchBar = () => {
+const SearchBar = ({ fetchImages, onError }) => {
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    if (values.searchText.trim() === "") {
+      onError("Search text is required");
+    } else {
+      fetchImages(values.searchText, "photos", 1);
+      resetForm();
+    }
+    setSubmitting(false);
+  };
   return (
-    <header className={styles.container}>
+    <div className={styles.container}>
       <Formik
         initialValues={{ searchText: "" }}
         validationSchema={Yup.object({
-          searchText: Yup.string().required("Required"),
+          searchText: Yup.string(),
         })}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          alert(JSON.stringify(values.searchText));
-          resetForm();
-          setSubmitting(false);
-        }}
+        onSubmit={handleSubmit}
       >
         <Form className={styles.formContainer}>
           <div className={styles.formField}>
@@ -32,7 +37,7 @@ const SearchBar = () => {
           </button>
         </Form>
       </Formik>
-    </header>
+    </div>
   );
 };
 

@@ -1,0 +1,24 @@
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader::before{
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    opacity: 0.2;
+    background-color: black;
+}
+.loadIcon{
+    z-index: 105;
+}
