@@ -7,7 +7,11 @@ const ImageGallery = ({ images, openModal }) => {
     <ul className={styles.container}>
       {images.map((image, index) => (
         <li key={index}>
-          <ImageCard openModal={openModal} src={image.urls} alt="image1" />
+          <ImageCard
+            openModal={openModal}
+            src={image.urls}
+            alt={image.alt_description || "Image"}
+          />
         </li>
       ))}
     </ul>
